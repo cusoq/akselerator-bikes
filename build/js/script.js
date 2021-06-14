@@ -17,12 +17,15 @@
 var ESC_KEYCODE = 27;
 var ENTER_KEYCODE = 13;
 var popupOverlay = document.querySelector('.navigation');
-// console.log(popupOverlay);
 var crossButton = popupOverlay.querySelector('.navigation__menu-close-cross-button');
 var navLink = popupOverlay.querySelectorAll('.navigation__link');
-// console.log(crossButton);
 var burgerButton = document.querySelector('.intro__menu-open-burger-button');
-// console.log(burgerButton);
+
+var showBurger = function () {
+  burgerButton.classList.remove('visually-hidden');
+};
+
+showBurger();
 
 // открытие модального окна
 var showPopup = function () {

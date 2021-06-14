@@ -18,27 +18,31 @@
   <header class="header">
     <nav class="header__navigation navigation navigation--closed">
       <button class="navigation__menu-close-cross-button navigation__menu-close-cross-button--closed"
-            aria-label="Кнопка закрытия меню">
-            <svg width="50" height="52" viewBox="0 0 50 52" xmlns="http://www.w3.org/2000/svg">
-              <use xlink:href="img/sprite_auto.svg#icon-cross"></use>
-            </svg>
-          </button>
-      <ul class="navigation__list navigation__list--hidden">
+        aria-label="Кнопка закрытия меню">
+        <svg width="50" height="52" viewBox="0 0 50 52" xmlns="http://www.w3.org/2000/svg">
+          <use xlink:href="img/sprite_auto.svg#icon-cross"></use>
+        </svg>
+      </button>
+      <ul class="navigation__list">
         <li><a class="navigation__link" href="#pl">О нас <span>&gt;</span></a></li>
         <li><a class="navigation__link" href="#p">Виды велосипедов <span>&gt;</span></a></li>
         <li><a class="navigation__link" href="#p">Видео про велосипеды <span>&gt;</span></a></li>
         <li><a class="navigation__link" href="#p">Контакты <span>&gt;</span></a></li>
       </ul>
-      <noscript>
-        <ul class="navigation__list navigation__list--noscript">
-          <li><a class="navigation__link" href="#pl">О нас <span>&gt;</span></a></li>
-          <li><a class="navigation__link" href="#p">Виды велосипедов <span>&gt;</span></a></li>
-          <li><a class="navigation__link" href="#p">Видео про велосипеды <span>&gt;</span></a></li>
-          <li><a class="navigation__link" href="#p">Контакты <span>&gt;</span></a></li>
-        </ul>
-      </noscript>
     </nav>
-
+    <noscript>
+      <nav class="header__navigation navigation navigation--noscript">
+      <p class="navigation__noscript-message">
+        Achtung! YOU HAVE JAVASCRIPT TURNED OFF :(
+      </p>
+      <ul class="navigation__list navigation__list--noscript">
+        <li><a class="navigation__link" href="#pl">О нас <span>&gt;</span></a></li>
+        <li><a class="navigation__link" href="#p">Виды велосипедов <span>&gt;</span></a></li>
+        <li><a class="navigation__link" href="#p">Видео про велосипеды <span>&gt;</span></a></li>
+        <li><a class="navigation__link" href="#p">Контакты <span>&gt;</span></a></li>
+      </ul>
+      </nav>
+    </noscript>
     <div class="header__inner-wrapper">
       <section class="header__intro intro">
         <div class="intro__intro-header">
@@ -48,13 +52,13 @@
               <use xlink:href="img/sprite_auto.svg#icon-logo"></use>
             </svg>
           </a>
-          <button class="intro__menu-open-burger-button"
-            aria-label="Кнопка раскрытия меню">
+          <button class="intro__menu-open-burger-button visually-hidden" aria-label="Кнопка раскрытия меню">
             <svg width="30" height="30" viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg">
               <use xlink:href="img/sprite_auto.svg#icon-burger"></use>
             </svg>
           </button>
         </div>
+
         <h2 class="visually-hidden">Предмет нашей деятельности</h2>
         <p class="intro__slogan"><b>Мы продаем велосипеды</b></p>
         <p class="intro__description">Наш магазин отбирает только самые лучшие велосипеды для продажи</p>

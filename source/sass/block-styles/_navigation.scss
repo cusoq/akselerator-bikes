@@ -12,11 +12,11 @@
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.8);
-    z-index: 5;
     color: #48494d;
     padding: 0;
     font-size: 20px;
     line-height: 60px;
+    z-index: 5;
 
     &--closed {
       display: none;
@@ -42,6 +42,20 @@
   }
 }
 
+.navigation--noscript {
+  display: none;
+
+  @media (max-width: 1024px) {
+    position: relative;
+    top: 0;
+    display: block;
+    width: 100%;
+    min-height: auto;
+    padding: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+}
+
 .navigation__list {
   display: flex;
   justify-content: space-between;
@@ -53,43 +67,74 @@
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 
   @media (max-width: 1024px) {
-    // display: none;
     box-sizing: border-box;
     background-color: #ffffff;
-
     flex-direction: column;
     align-items: flex-start;
     padding: 100px 0 130px 0;
     margin: 0 0 0 auto;
-
     width: 320px;
     min-height: 562px;
   }
 }
 
-.navigation span {
+.navigation__list--noscript {
+  display: none;
+
+  @media (max-width: 1024px) {
+    display: flex;
+    box-sizing: border-box;
+    width: 100%;
+    background-color: #ffffff;
+    color: #48494d;
+    font-size: 20px;
+    line-height: 60px;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 50px 30px 30px 30px;
+    margin: 0;
+    min-height: 462px;
+  }
+}
+
+.navigation span,
+.navigation__list--noscript span {
   display: none;
 
   @media (max-width: 1024px) {
     display: inline;
     float: right;
-    vertical-align: bottom;
+    vertical-align: middle;
   }
 }
 
-.navigation a {
+.navigation a,
+.navigation__list--noscript a {
   @media (max-width: 1024px) {
     box-sizing: border-box;
     display: block;
-    min-width: 320px;
     width: 100%;
+    min-width: 320px;
     padding: 0 25px 0 15px;
     background-color: #f6f6f6;
   }
 }
 
 .navigation a:hover,
-.navigation a:focus {
+.navigation__list--noscript a:hover,
+.navigation a:focus,
+.navigation__list--noscript a:focus {
   opacity: 0.5;
   cursor: pointer;
+}
+
+.navigation__noscript-message {
+  position: fixed;
+  right: 0;
+  color: #ff0000;
+  opacity: 0.5;
+  padding: 5px;
+  margin: 10px 30px;
+  border: 1px solid #ff0000;
+  line-height: 1;
 }
