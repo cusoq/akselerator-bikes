@@ -1,5 +1,4 @@
 .customer-data {
-  // outline: 2px dotted #ffffff;
   width: 328px;
 
   @media (max-width: 1023px) {
@@ -9,7 +8,7 @@
     background-color: #ffffff;
   }
 
-  @media (max-width: 767px) {
+  @media (max-width: 727px) {
     width: 288px;
   }
 }
@@ -29,7 +28,7 @@
     margin-bottom: 32px;
   }
 
-  @media (max-width: 1023px) {
+  @media (max-width: 727px) {
     margin-bottom: 22px;
   }
 }
@@ -58,11 +57,6 @@
   &:focus {
     box-shadow: 0 0 0 2px #0ad9c6;
   }
-
-  // @media (max-width: $breakpoint-mobile) {
-  //   padding: 0 27px;
-  //   width: 288px;
-  // }
 }
 
 .customer-data__field::placeholder {
@@ -74,11 +68,8 @@
 .customer-data__button {
   box-sizing: border-box;
   width: 100%;
-  // padding: 0 26px;
   line-height: 48px;
   border: none;
-  // box-shadow: 0 0 0 1px #c9ccd4;
-  // border: 1px solid #c9ccd4;
   border-radius: 6px;
   background-color: #0ad9c6;
   color: #000000;
