@@ -1,6 +1,14 @@
 .about-us {
   background-color: #ffffff;
-  min-height: 475px;
+  padding: 122px 0 132px 0;
+
+  @media (max-width: 1024px) {
+    padding: 50px 0 40px 0;
+  }
+
+  @media (max-width: 727px) {
+    padding: 50px 0 50px 0;
+  }
 }
 
 .about-us__caption {
@@ -9,10 +17,8 @@
   font-weight: 600;
   line-height: 30px;
   text-align: center;
-  padding: 122px 0 0 0;
 
   @media (max-width: 1024px) {
-    padding: 50px 0 0 0;
     font-size: 24px;
     line-height: 41px;
   }
@@ -24,10 +30,10 @@
   flex-wrap: wrap;
   justify-content: space-between;
   margin: 0;
-  padding: 0 138px;
+  padding: 0 120px;
 
   @media (max-width: 1024px) {
-    padding: 0 105px;
+    padding: 0 95px;
   }
 
   @media (max-width: 727px) {
@@ -48,7 +54,7 @@
   }
 
   @media (max-width: 727px) {
-    padding: 10px 0 13px 0;
+    padding: 10px 0 12px 0;
   }
 }
 
