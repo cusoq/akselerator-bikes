@@ -4,10 +4,10 @@ var ESC_KEYCODE = 27;
 var ENTER_KEYCODE = 13;
 var popupOverlay = document.querySelector('.navigation');
 var popup = document.querySelector('.navigation__list');
-// console.log(popup);
 var crossButton = popupOverlay.querySelector('.navigation__menu-close-cross-button');
 var navLink = popupOverlay.querySelectorAll('.navigation__link');
 var burgerButton = document.querySelector('.intro__menu-open-burger-button');
+var anchors = document.querySelectorAll('a[href*="#"]');
 
 var showBurger = function () {
   if (burgerButton) {
@@ -34,6 +34,22 @@ var closePopup = function () {
     burgerButton.classList.remove('intro__menu-open-burger-button--closed');
   }
 };
+
+// Плавная прокрутка для якорных ссылок
+var smoothOperate = function () {
+  anchors.forEach(function (anchor) {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      var blockID = anchor.getAttribute('href').substr(1);
+      document.getElementById(blockID).scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
+    });
+  });
+};
+
+smoothOperate();
 
 // Хендлеры
 var onClickOpener = function (evt) {
@@ -65,7 +81,7 @@ var onEscCloser = function (evt) {
 
 // Обработчики событий
 burgerButton.addEventListener('click', onClickOpener);
-crossButton.addEventListener('keydown', onEnterOpener);
+burgerButton.addEventListener('keydown', onEnterOpener);
 crossButton.addEventListener('click', onClickCloser);
 popupOverlay.addEventListener('click', onClickCloser);
 navLink.forEach(function (element) {
