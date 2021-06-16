@@ -3,28 +3,35 @@
 var ESC_KEYCODE = 27;
 var ENTER_KEYCODE = 13;
 var popupOverlay = document.querySelector('.navigation');
+var popup = document.querySelector('.navigation__list');
 var crossButton = popupOverlay.querySelector('.navigation__menu-close-cross-button');
 var navLink = popupOverlay.querySelectorAll('.navigation__link');
 var burgerButton = document.querySelector('.intro__menu-open-burger-button');
 
 var showBurger = function () {
-  burgerButton.classList.remove('visually-hidden');
+  if (burgerButton) {
+    burgerButton.classList.remove('visually-hidden');
+  }
 };
 
 showBurger();
 
 // открытие модального окна
 var showPopup = function () {
-  popupOverlay.classList.remove('navigation--closed');
-  crossButton.classList.remove('navigation__menu-close-cross-button--closed');
-  burgerButton.classList.add('intro__menu-open-burger-button--closed');
+  if (popupOverlay || crossButton || burgerButton) {
+    popupOverlay.classList.remove('navigation--closed');
+    crossButton.classList.remove('navigation__menu-close-cross-button--closed');
+    burgerButton.classList.add('intro__menu-open-burger-button--closed');
+  }
 };
 
 // закрытие модального окна
 var closePopup = function () {
-  popupOverlay.classList.add('navigation--closed');
-  crossButton.classList.add('navigation__menu-close-cross-button--closed');
-  burgerButton.classList.remove('intro__menu-open-burger-button--closed');
+  if (popupOverlay || crossButton || burgerButton) {
+    popupOverlay.classList.add('navigation--closed');
+    crossButton.classList.add('navigation__menu-close-cross-button--closed');
+    burgerButton.classList.remove('intro__menu-open-burger-button--closed');
+  }
 };
 
 // Хендлеры
@@ -35,7 +42,9 @@ var onClickOpener = function (evt) {
 
 var onClickCloser = function (evt) {
   evt.preventDefault();
-  closePopup();
+  if (evt.target !== popup) {
+    closePopup();
+  }
 };
 
 var onEnterOpener = function (evt) {
@@ -55,8 +64,9 @@ var onEscCloser = function (evt) {
 
 // Обработчики событий
 burgerButton.addEventListener('click', onClickOpener);
-crossButton.addEventListener('keydown', onEnterOpener);
+burgerButton.addEventListener('keydown', onEnterOpener);
 crossButton.addEventListener('click', onClickCloser);
+popupOverlay.addEventListener('click', onClickCloser);
 navLink.forEach(function (element) {
   element.addEventListener('click', onClickCloser);
 });
