@@ -84,7 +84,8 @@
   }
 }
 
-.intro__slogan {
+.intro span {
+  display: block;
   font-weight: bold;
   font-size: 46px;
   line-height: 64px;
@@ -102,7 +103,7 @@
   }
 }
 
-.intro__description {
+.intro p {
   font-weight: 300;
   font-size: 20px;
   line-height: 32px;

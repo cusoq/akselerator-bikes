@@ -16,7 +16,9 @@
 
 <body>
   <header class="header">
+    <!-- Добавление класса "navigation--closed" скрывает меню -->
     <nav class="header__navigation navigation navigation--closed">
+      <!-- Добавление класса "navigation__menu-close-cross-button--closed" скрывает кнолку закрытия меню при открытии меню-->
       <button class="navigation__menu-close-cross-button navigation__menu-close-cross-button--closed"
         aria-label="Кнопка закрытия меню">
         <svg width="50" height="52" viewBox="0 0 50 52" xmlns="http://www.w3.org/2000/svg">
@@ -24,23 +26,23 @@
         </svg>
       </button>
       <ul class="navigation__list">
-        <li><a class="navigation__link" href="#pl">О нас <span>&gt;</span></a></li>
-        <li><a class="navigation__link" href="#p">Виды велосипедов <span>&gt;</span></a></li>
-        <li><a class="navigation__link" href="#p">Видео про велосипеды <span>&gt;</span></a></li>
-        <li><a class="navigation__link" href="#p">Контакты <span>&gt;</span></a></li>
+        <li><a class="navigation__link" href="#about-us">О нас <span>&gt;</span></a></li>
+        <li><a class="navigation__link" href="#types">Виды велосипедов <span>&gt;</span></a></li>
+        <li><a class="navigation__link" href="#video">Видео про велосипеды <span>&gt;</span></a></li>
+        <li><a class="navigation__link" href="#adress">Контакты <span>&gt;</span></a></li>
       </ul>
     </nav>
     <noscript>
       <nav class="header__navigation navigation navigation--noscript">
-      <p class="navigation__noscript-message">
-        Achtung! YOU HAVE JAVASCRIPT TURNED OFF :(
-      </p>
-      <ul class="navigation__list navigation__list--noscript">
-        <li><a class="navigation__link" href="#pl">О нас <span>&gt;</span></a></li>
-        <li><a class="navigation__link" href="#p">Виды велосипедов <span>&gt;</span></a></li>
-        <li><a class="navigation__link" href="#p">Видео про велосипеды <span>&gt;</span></a></li>
-        <li><a class="navigation__link" href="#p">Контакты <span>&gt;</span></a></li>
-      </ul>
+        <p class="navigation__noscript-message">
+          Achtung! YOU HAVE JAVASCRIPT TURNED OFF :(
+        </p>
+        <ul class="navigation__list navigation__list--noscript">
+          <li><a class="navigation__link" href="#about-us">О нас <span>&gt;</span></a></li>
+          <li><a class="navigation__link" href="#types">Виды велосипедов <span>&gt;</span></a></li>
+          <li><a class="navigation__link" href="#video">Видео про велосипеды <span>&gt;</span></a></li>
+          <li><a class="navigation__link" href="#adress">Контакты <span>&gt;</span></a></li>
+        </ul>
       </nav>
     </noscript>
     <div class="header__inner-wrapper">
@@ -52,6 +54,8 @@
               <use xlink:href="img/sprite_auto.svg#icon-logo"></use>
             </svg>
           </a>
+          <!-- Добавление класса "visually-hidden" скрывает кнолку открытия меню при отключенном JS-->
+          <!-- Добавление класса "intro__menu-open-burger-button--closed" скрывает кнолку открытия меню при открытии меню-->
           <button class="intro__menu-open-burger-button visually-hidden" aria-label="Кнопка раскрытия меню">
             <svg width="30" height="30" viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg">
               <use xlink:href="img/sprite_auto.svg#icon-burger"></use>
@@ -60,7 +64,7 @@
         </div>
 
         <h2 class="visually-hidden">Предмет нашей деятельности</h2>
-        <p class="intro__slogan"><b>Мы продаем велосипеды</b></p>
+        <span class="intro__slogan"><b>Мы продаем велосипеды</b></span>
         <p class="intro__description">Наш магазин отбирает только самые лучшие велосипеды для продажи</p>
       </section>
 
@@ -70,14 +74,14 @@
 
         <form class="customer-data__form" method="post" action="https://echo.htmlacademy.ru">
           <div class="customer-data__inner-wrapper">
-            <p class="customer-data__input-container">
+            <div class="customer-data__input-container">
               <input class="customer-data__field customer-data__field--name" type="text" name="name"
                 placeholder="Введите Ваше Имя">
-            </p>
-            <p class="customer-data__input-container customer-data__input-container--formcontact-tel">
+            </div>
+            <div class="customer-data__input-container">
               <input class="customer-data__field customer-data__field--tel" pattern="[0-9]{11}" type="tel" name="tel"
                 placeholder="Введите Ваш номер телефона" required>
-            </p>
+            </div>
           </div>
           <button class="customer-data__button">Подобрать велосипед мечты</button>
         </form>
@@ -87,7 +91,7 @@
   <main class="main">
     <h1 class="visually-hidden">Магазин велосипедов "Moon"</h1>
 
-    <section class="main__about-us about-us">
+    <section class="main__about-us about-us" id="about-us">
       <h2 class="about-us__caption">Несколько фактов о нас</h2>
       <ul class="about-us__list">
         <li class="about-us__item">
@@ -110,7 +114,7 @@
 
     </section>
 
-    <section class="main__types types">
+    <section class="main__types types" id="types">
       <h2 class="types__types-caption">Виды велосипедов</h2>
       <ul class="types__types-list">
         <li class="types__types-item">
@@ -119,8 +123,10 @@
               <source type="image/webp" media="(max-width: 1023px)"
                 srcset="img/road-bike-270-300-1x.webp 1x, img/road-bike-270-300-2x.webp 2x">
               <source type="image/webp" srcset="img/road-bike-342-503-1x.webp 1x, img/road-bike-342-503-2x.webp 2x">
+              <!-- 1х: 270px/300px; 2x: 540px/600px -->
               <source media="(max-width: 1023px)"
                 srcset="img/road-bike-270-300-1x.jpg, img/road-bike-270-300-2x.jpg 2x">
+              <!-- 1х: 342px/503px; 2x: 684px/1006px -->
               <img src="img/road-bike-342-503-1x.jpg" srcset="img/road-bike-342-503-2x.jpg 2x" width="342" height="503"
                 alt="Дорожный велосипед с корзинкой">
             </picture>
@@ -134,7 +140,9 @@
               <source type="image/webp" media="(max-width: 1023px)"
                 srcset="img/mt-bike-270-300-1x.webp 1x, img/mt-bike-270-300-2x.webp 2x">
               <source type="image/webp" srcset="img/mt-bike-342-566-1x.webp 1x, img/mt-bike-342-566-2x.webp 2x">
+              <!-- 1х: 270px/300px; 2x: 540px/600px -->
               <source media="(max-width: 1023px)" srcset="img/mt-bike-270-300-1x.jpg, img/mt-bike-270-300-2x.jpg 2x">
+              <!-- 1х: 342px/566px; 2x: 684px/1132px -->
               <img src="img/mt-bike-342-566-1x.jpg" srcset="img/mt-bike-342-566-2x.jpg 2x" width="342" height="566"
                 alt="Горный велосипед на фоне гор">
             </picture>
@@ -148,8 +156,10 @@
               <source type="image/webp" media="(max-width: 1023px)"
                 srcset="img/kids-bike-270-300-1x.webp 1x, img/kids-bike-270-300-2x.webp 2x">
               <source type="image/webp" srcset="img/kids-bike-342-512-1x.webp 1x, img/kids-bike-342-512-2x.webp 2x">
+              <!-- 1х: 270px/300px; 2x: 540px/600px -->
               <source media="(max-width: 1023px)"
                 srcset="img/kids-bike-270-300-1x.jpg, img/kids-bike-270-300-2x.jpg 2x">
+              <!-- 1х: 342px/512px; 2x: 684px/1024px -->
               <img src="img/kids-bike-342-512-1x.jpg" srcset="img/kids-bike-342-512-2x.jpg 2x" width="342" height="512"
                 alt="Детский розовый велосипед">
             </picture>
@@ -159,7 +169,7 @@
       </ul>
     </section>
 
-    <section class="main__video video">
+    <section class="main__video video" id="video">
       <h2 class="video__video-caption">Видео про велосипеды</h2>
       <p class="video__video-description">В этом видео мы подробно расскажем про особенности выбора велосипеда для себя.
       </p>
@@ -175,27 +185,27 @@
 
   </main>
   <footer class="footer">
-    <section class="footer__adress">
+    <section class="footer__adress" id="adress">
       <h3 class="footer__adress-caption">Как нас найти?</h3>
       <p class="footer__adress-description">Мы находимся по адресу: Санкт-Петербург, ул. Большая Конюшенная, д. 19</p>
     </section>
-      <div class="footer__map-wrapper">
+    <div class="footer__map-wrapper">
 
-      </div>
+    </div>
     <section class="footer__contacts">
       <h3 class="visually-hidden">Наши контакты</h3>
-        <a class="footer__email-link" href="mailto:puteshestviemechta@gmail.ru" aria-label="Ссылка для почты">
-          <svg width="26" height="20" viewBox="0 0 26 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <use xlink:href="img/sprite_auto.svg#icon-mail"></use>
-          </svg>
-          <span class="footer__email-adress">puteshestviemechta@gmail.ru</span>
-        </a>
-        <a class="footer__tel-link" href="tel:+749978468446" aria-label="Ссылка для звонка">
-          <svg width="22" height="24" viewBox="0 0 22 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <use xlink:href="img/sprite_auto.svg#icon-phone"></use>
-          </svg>
-          <span class="footer__tel-nomber">+7 (499) -784-684-46</span>
-        </a>
+      <a class="footer__email-link" href="mailto:puteshestviemechta@gmail.ru" aria-label="Ссылка для почты">
+        <svg width="26" height="20" viewBox="0 0 26 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <use xlink:href="img/sprite_auto.svg#icon-mail"></use>
+        </svg>
+        <span class="footer__email-adress">puteshestviemechta@gmail.ru</span>
+      </a>
+      <a class="footer__tel-link" href="tel:+749978468446" aria-label="Ссылка для звонка">
+        <svg width="22" height="24" viewBox="0 0 22 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <use xlink:href="img/sprite_auto.svg#icon-phone"></use>
+        </svg>
+        <span class="footer__tel-nomber">+7 (499) -784-684-46</span>
+      </a>
     </section>
   </footer>
   <script src="js/script.js"></script>

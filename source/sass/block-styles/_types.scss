@@ -11,7 +11,7 @@
   }
 }
 
-.types__types-caption {
+.types h2 {
   font-weight: 600;
   font-size: 30px;
   line-height: 30px;
@@ -24,7 +24,7 @@
   }
 }
 
-.types__bike-type-title {
+.types h4 {
   font-weight: 600;
   font-size: 22px;
   line-height: 34px;
@@ -133,8 +133,8 @@
     }
 
     @media (max-width: 727px) {
-      top: 200px;
-      left: -25px;
+      top: 205px;
+      left: -30px;
     }
   }
 
@@ -188,8 +188,8 @@
     }
 
     @media (max-width: 727px) {
-      top: -15px;
-      right: -15px;
+      top: -20px;
+      right: -20px;
     }
   }
 }
