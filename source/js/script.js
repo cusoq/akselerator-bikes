@@ -2,42 +2,46 @@
 
 var ESC_KEYCODE = 27;
 var ENTER_KEYCODE = 13;
-var popupOverlay = document.querySelector('.navigation');
-var popup = document.querySelector('.navigation__list');
-var crossButton = popupOverlay.querySelector('.navigation__menu-close-cross-button');
-var navLink = popupOverlay.querySelectorAll('.navigation__link');
-var burgerButton = document.querySelector('.intro__menu-open-burger-button');
-var anchors = document.querySelectorAll('a[href*="#"]');
+var pageElement = document.querySelector('body');
+var popupOverlayElement = document.querySelector('.navigation');
+var menuBlockElement = document.querySelector('.navigation__list');
+var crossButtonElement = popupOverlayElement.querySelector('.navigation__menu-close-cross-button');
+var navLinkElements = popupOverlayElement.querySelectorAll('.navigation__link');
+var burgerButtonElement = document.querySelector('.intro__menu-open-burger-button');
+var anchorsElements = document.querySelectorAll('a[href*="#"]');
 
 var showBurger = function () {
-  if (burgerButton) {
-    burgerButton.classList.remove('visually-hidden');
+  if (burgerButtonElement) {
+    burgerButtonElement.classList.remove('visually-hidden');
   }
 };
 
 showBurger();
 
+
 // открытие модального окна
 var showPopup = function () {
-  if (popupOverlay || crossButton || burgerButton) {
-    popupOverlay.classList.remove('navigation--closed');
-    crossButton.classList.remove('navigation__menu-close-cross-button--closed');
-    burgerButton.classList.add('intro__menu-open-burger-button--closed');
+  if (popupOverlayElement || crossButtonElement || burgerButtonElement) {
+    popupOverlayElement.classList.remove('navigation--closed');
+    crossButtonElement.classList.remove('navigation__menu-close-cross-button--closed');
+    burgerButtonElement.classList.add('intro__menu-open-burger-button--closed');
+    pageElement.classList.add('non-scroll');
   }
 };
 
 // закрытие модального окна
 var closePopup = function () {
-  if (popupOverlay || crossButton || burgerButton) {
-    popupOverlay.classList.add('navigation--closed');
-    crossButton.classList.add('navigation__menu-close-cross-button--closed');
-    burgerButton.classList.remove('intro__menu-open-burger-button--closed');
+  if (popupOverlayElement || crossButtonElement || burgerButtonElement) {
+    popupOverlayElement.classList.add('navigation--closed');
+    crossButtonElement.classList.add('navigation__menu-close-cross-button--closed');
+    burgerButtonElement.classList.remove('intro__menu-open-burger-button--closed');
+    pageElement.classList.remove('non-scroll');
   }
 };
 
 // Плавная прокрутка для якорных ссылок
 var smoothOperate = function () {
-  anchors.forEach(function (anchor) {
+  anchorsElements.forEach(function (anchor) {
     anchor.addEventListener('click', function (e) {
       e.preventDefault();
       var blockID = anchor.getAttribute('href').substr(1);
@@ -59,7 +63,7 @@ var onClickOpener = function (evt) {
 
 var onClickCloser = function (evt) {
   evt.preventDefault();
-  if (evt.target !== popup) {
+  if (evt.target !== menuBlockElement) {
     closePopup();
   }
 };
@@ -80,11 +84,11 @@ var onEscCloser = function (evt) {
 };
 
 // Обработчики событий
-burgerButton.addEventListener('click', onClickOpener);
-burgerButton.addEventListener('keydown', onEnterOpener);
-crossButton.addEventListener('click', onClickCloser);
-popupOverlay.addEventListener('click', onClickCloser);
-navLink.forEach(function (element) {
+burgerButtonElement.addEventListener('click', onClickOpener);
+burgerButtonElement.addEventListener('keydown', onEnterOpener);
+crossButtonElement.addEventListener('click', onClickCloser);
+popupOverlayElement.addEventListener('click', onClickCloser);
+navLinkElements.forEach(function (element) {
   element.addEventListener('click', onClickCloser);
 });
 document.addEventListener('keydown', onEscCloser);

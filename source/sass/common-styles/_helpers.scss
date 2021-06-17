@@ -7,3 +7,9 @@
   width: 1px;
   overflow: hidden;
 }
+
+.non-scroll {
+  @media (max-width: 1024px) {
+    overflow: hidden;
+  }
+}
