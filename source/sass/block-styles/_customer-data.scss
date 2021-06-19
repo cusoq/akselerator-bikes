@@ -38,7 +38,6 @@
 }
 
 .customer-data input {
-  box-sizing: border-box;
   width: 100%;
   padding: 0 26px;
   line-height: 48px;
@@ -59,14 +58,13 @@
   }
 }
 
-.customer-data__field::placeholder {
+.customer-data input::placeholder {
   color: #1c1c1c;
   font-size: 15px;
   opacity: 0.5;
 }
 
 .customer-data__button {
-  box-sizing: border-box;
   width: 100%;
   line-height: 48px;
   border: none;

@@ -67,7 +67,6 @@
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 
   @media (max-width: 1024px) {
-    box-sizing: border-box;
     background-color: #ffffff;
     flex-direction: column;
     align-items: flex-start;
@@ -83,7 +82,6 @@
 
   @media (max-width: 1024px) {
     display: flex;
-    box-sizing: border-box;
     width: 100%;
     background-color: #ffffff;
     color: #48494d;
@@ -111,7 +109,6 @@
 .navigation a,
 .navigation__list--noscript a {
   @media (max-width: 1024px) {
-    box-sizing: border-box;
     display: block;
     width: 100%;
     min-width: 320px;

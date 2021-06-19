@@ -1,5 +1,14 @@
-body {
+html {
   box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -23,7 +32,3 @@ a {
   outline-offset: 0;
 }
 
-::after,
-::before {
-  box-sizing: border-box;
-}
