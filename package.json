@@ -1,5 +1,5 @@
 {
-  "name": "Liga-A-akselerator-bikes",
+  "name": "bikes",
   "version": "1.0.0",
   "description": "Акселератор Лиги А, магазин велосипедов",
   "devDependencies": {
@@ -20,9 +20,7 @@
     "gulp-svgstore": "^7.0.1",
     "gulp-webp": "^4.0.1",
     "pixel-glass": "^1.0.13",
-    "posthtml-include": "^1.2.0",
-    "stylelint": "9.10.x",
-    "stylelint-config-htmlacademy": "0.1.x"
+    "posthtml-include": "^1.2.0"
   },
   "scripts": {
     "editorconfig": "editorconfig-cli",
@@ -50,6 +48,8 @@
     "node": "8.15"
   },
   "dependencies": {
-    "del": "^4.1.1"
+    "del": "^4.1.1",
+    "stylelint": "^13.13.1",
+    "stylelint-config-htmlacademy": "^0.1.10"
   }
 }

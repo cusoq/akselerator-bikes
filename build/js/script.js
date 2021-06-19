@@ -18,7 +18,6 @@ var showBurger = function () {
 
 showBurger();
 
-
 // открытие модального окна
 var showPopup = function () {
   if (popupOverlayElement || crossButtonElement || burgerButtonElement) {
