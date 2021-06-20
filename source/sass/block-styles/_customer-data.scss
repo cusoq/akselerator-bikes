@@ -35,6 +35,11 @@
 
 .customer-data__input-container {
   margin: 0 0 18px 0;
+
+  &--invalid {
+    box-shadow: 0 0 0 2px #ff0000;
+    border-radius: 6px;
+  }
 }
 
 .customer-data input {
@@ -46,10 +51,6 @@
 
   @media (max-width: 1023px) {
     padding: 0 22px;
-  }
-
-  &:invalid {
-    box-shadow: 0 0 0 1px #ff0000;
   }
 
   &:hover,

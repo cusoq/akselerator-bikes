@@ -9,7 +9,9 @@ var crossButtonElement = popupOverlayElement.querySelector('.navigation__menu-cl
 var navLinkElements = popupOverlayElement.querySelectorAll('.navigation__link');
 var burgerButtonElement = document.querySelector('.intro__menu-open-burger-button');
 var anchorsElements = document.querySelectorAll('a[href*="#"]');
+var requiredInputElements = document.querySelectorAll('input:required');
 
+// Сокрытие кнопки-бургера при работающем JS
 var showBurger = function () {
   if (burgerButtonElement) {
     burgerButtonElement.classList.remove('visually-hidden');
@@ -54,7 +56,21 @@ var smoothOperate = function () {
 
 smoothOperate();
 
+// Проверка валидности форм
+var checkValidity = function (evt) {
+  if (!evt.target.validity.valid) {
+    evt.target.parentNode.classList.add('customer-data__input-container--invalid');
+  } else {
+    evt.target.parentNode.classList.remove('customer-data__input-container--invalid');
+  }
+};
+
+
 // Хендлеры
+var onChangeInputValue = function (evt) {
+  checkValidity(evt);
+};
+
 var onClickOpener = function (evt) {
   evt.preventDefault();
   showPopup();
@@ -87,7 +103,10 @@ burgerButtonElement.addEventListener('click', onClickOpener);
 burgerButtonElement.addEventListener('keydown', onEnterOpener);
 crossButtonElement.addEventListener('click', onClickCloser);
 popupOverlayElement.addEventListener('click', onClickCloser);
+document.addEventListener('keydown', onEscCloser);
 navLinkElements.forEach(function (element) {
   element.addEventListener('click', onClickCloser);
 });
-document.addEventListener('keydown', onEscCloser);
+requiredInputElements.forEach(function (element) {
+  element.addEventListener('change', onChangeInputValue);
+});
