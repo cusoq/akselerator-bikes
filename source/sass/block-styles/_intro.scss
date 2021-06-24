@@ -23,10 +23,10 @@
     width: 100%;
     min-width: 320px;
     min-height: 390px;
-    background-image: url("../img/main-bg-319-390-1x.jpg");
+    background-image: url("../img/main-bg-319-390-1x (1).jpg");
 
     @media (min-resolution: 2dppx) {
-      background-image: url("../img/main-bg-319-390-2x.jpg");
+      background-image: url("../img/main-bg-319-390-2x (1).jpg");
       background-size: 100%;
     }
   }
@@ -52,12 +52,6 @@
     padding: 25px 20px;
     text-align: center;
   }
-}
-
-.intro__logo-link:hover,
-.intro__logo-link:focus {
-  opacity: 0.5;
-  cursor: pointer;
 }
 
 .intro__menu-open-burger-button {

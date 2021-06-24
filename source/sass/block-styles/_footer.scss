@@ -6,6 +6,8 @@
   align-items: center;
   text-align: center;
   padding: 220px 0 50px 0;
+  max-width: 1440px;
+  margin: 0 auto;
 
   @media (max-width: 1024px) {
     padding: 130px 0 50px 0;
@@ -89,10 +91,10 @@
   @media (max-width: 727px) {
     width: 320px;
     height: 250px;
-    background-image: url("../img/map-319-250-1x.png");
+    background-image: url("../img/map-319-250-1x.jpg");
 
     @media (min-resolution: 2dppx) {
-      background-image: url("../img/map-319-250-2x.png");
+      background-image: url("../img/map-319-250-2x.jpg");
       background-size: 100%;
     }
   }
@@ -115,6 +117,11 @@
 .footer__contacts a {
   display: flex;
   align-items: center;
+  margin: 0 0 15px 0;
+
+  @media (max-width: 727px) {
+    margin: 0;
+  }
 
   &:hover,
   &:focus {

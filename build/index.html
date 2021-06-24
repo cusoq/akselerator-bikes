@@ -7,11 +7,11 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Akselerator-bikes</title>
   <meta name="description" content="Велосипеды">
-  <link rel="stylesheet" href="css/style.min.css">
   <link rel="preload" href="fonts/opensans.woff2" as="font">
   <link rel="preload" href="fonts/opensanslight.woff2" as="font">
   <link rel="preload" href="fonts/opensanssemibold.woff2" as="font">
   <link rel="preload" href="fonts/opensansbold.woff2" as="font">
+  <link rel="stylesheet" href="css/style.min.css">
 
 </head>
 
@@ -74,10 +74,10 @@
         <form class="customer-data__form" method="post" action="https://echo.htmlacademy.ru">
           <div class="customer-data__inner-wrapper">
             <div class="customer-data__input-container">
-              <input type="text" name="name" placeholder="Введите Ваше Имя">
+              <input type="text" name="name" placeholder="Введите Ваше Имя" required="">
             </div>
             <div class="customer-data__input-container customer-data__input-container--tel">
-              <input pattern="[0-9]{11}" type="tel" name="tel" placeholder="Введите Ваш номер телефона" required="">
+              <input pattern="^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$" type="tel" name="tel" placeholder="Введите Ваш номер телефона" required="">
             </div>
           </div>
           <button class="customer-data__button">Подобрать велосипед мечты</button>
@@ -122,7 +122,7 @@
               <!-- 1х: 270px/300px; 2x: 540px/600px -->
               <source media="(max-width: 1023px)" srcset="img/road-bike-270-300-1x.jpg, img/road-bike-270-300-2x.jpg 2x">
               <!-- 1х: 342px/503px; 2x: 684px/1006px -->
-              <img src="img/road-bike-342-503-1x.jpg" srcset="img/road-bike-342-503-2x.jpg 2x" width="342" height="503" alt="Дорожный велосипед с корзинкой">
+              <img src="img/road-bike-342-503-1x.jpg" loading="lazy" srcset="img/road-bike-342-503-2x.jpg 2x" width="342" height="503" alt="Дорожный велосипед с корзинкой">
             </picture>
           </div>
 <h4>Дорожный велосипед</h4>
@@ -136,7 +136,7 @@
               <!-- 1х: 270px/300px; 2x: 540px/600px -->
               <source media="(max-width: 1023px)" srcset="img/mt-bike-270-300-1x.jpg, img/mt-bike-270-300-2x.jpg 2x">
               <!-- 1х: 342px/566px; 2x: 684px/1132px -->
-              <img src="img/mt-bike-342-566-1x.jpg" srcset="img/mt-bike-342-566-2x.jpg 2x" width="342" height="566" alt="Горный велосипед на фоне гор">
+              <img src="img/mt-bike-342-566-1x.jpg" loading="lazy" srcset="img/mt-bike-342-566-2x.jpg 2x" width="342" height="566" alt="Горный велосипед на фоне гор">
             </picture>
           </div>
 <h4>Горный велосипед</h4>
@@ -150,7 +150,7 @@
               <!-- 1х: 270px/300px; 2x: 540px/600px -->
               <source media="(max-width: 1023px)" srcset="img/kids-bike-270-300-1x.jpg, img/kids-bike-270-300-2x.jpg 2x">
               <!-- 1х: 342px/512px; 2x: 684px/1024px -->
-              <img src="img/kids-bike-342-512-1x.jpg" srcset="img/kids-bike-342-512-2x.jpg 2x" width="342" height="512" alt="Детский розовый велосипед">
+              <img src="img/kids-bike-342-512-1x.jpg" loading="lazy" srcset="img/kids-bike-342-512-2x.jpg 2x" width="342" height="512" alt="Детский розовый велосипед">
             </picture>
           </div>
 <h4>Детский велосипед</h4>
@@ -197,7 +197,7 @@
       </a>
     </section>
   </footer>
-  <script src="js/script.js"></script>
+  <script defer="" src="js/script.js"></script>
 </body>
 
 </html>
