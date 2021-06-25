@@ -4,11 +4,11 @@ var ESC_KEYCODE = 27;
 var ENTER_KEYCODE = 13;
 var pageElement = document.querySelector('body');
 var popupOverlayElement = document.querySelector('.navigation');
-var menuBlockElement = document.querySelector('.navigation__list');
+var menuBlockElement = popupOverlayElement.querySelector('.navigation__list');
 var crossButtonElement = popupOverlayElement.querySelector('.navigation__menu-close-cross-button');
 var navLinkElements = popupOverlayElement.querySelectorAll('.navigation__link');
 var burgerButtonElement = document.querySelector('.intro__menu-open-burger-button');
-var anchorsElements = document.querySelectorAll('a[href*="#"]');
+var anchorsElements = popupOverlayElement.querySelectorAll('a[href*="#"]');
 var requiredInputElements = document.querySelectorAll('input:required');
 
 // Сокрытие кнопки-бургера при работающем JS
